@@ -12,7 +12,8 @@ fs.readFile(inputFile, (err, data) => {
   else {
     var stringifiedContents = data.toString();
     var splittedConetnt = stringifiedContents.split('\n');
-    moveBot(splittedConetnt); 
+    var finalPosition = moveBot(splittedConetnt); 
+    console.log(finalPosition)
   }
 });
 
@@ -73,7 +74,8 @@ function moveBot(botMotionData) {
         position[2] = directions[position[2]]['R']
         break;
     }
-    console.log(position);
+    // console.log(position);
   })
+  return position;
 }
 
